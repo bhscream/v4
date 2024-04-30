@@ -46,6 +46,13 @@ const StyledHeroSection = styled.section`
   }
 `;
 
+const StyledHeaderSection = styled.div`
+  ${({ theme }) => theme.mixins.flexCenter};
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+`;
+
 const Hero = () => {
   const [isMounted, setIsMounted] = useState(false);
   const prefersReducedMotion = usePrefersReducedMotion();
@@ -59,17 +66,22 @@ const Hero = () => {
     return () => clearTimeout(timeout);
   }, []);
 
-  const one = <h1>Hi, I'm the</h1>;
-  const two = <h2 className="big-heading">Mad Red Coder.</h2>;
-  const three = <h3 className="big-heading">I build things for the web.</h3>;
+  const one = <h1>Hi, my name is</h1>;
+  const two = (
+    <StyledHeaderSection>
+      <h2 className="big-heading">Ben Holland</h2>{' '}
+      <span style={{ margin: '0 0 22px 16px', fontSize: 25 }}>aka Mad Red Coder.</span>
+    </StyledHeaderSection>
+  );
+  const three = <h3 className="big-heading">I love to create things.</h3>;
   const four = (
     <>
       <p>
         I’m a software engineer specializing in building (and occasionally designing) exceptional
-        digital experiences. Currently, I’m focused on building accessible, human-centered products
-        at{' '}
-        <a href="https://upstatement.com/" target="_blank" rel="noreferrer">
-          Upstatement
+        digital experiences. Currently, I’m focused on building the first all-in-one finance
+        platform for SMBs at{' '}
+        <a href="https://aionfi.com/" target="_blank" rel="noreferrer">
+          Aion
         </a>
         .
       </p>

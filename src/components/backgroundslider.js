@@ -8,8 +8,35 @@ import background3 from '../images/background3.png';
 import background4 from '../images/background4.png';
 import background5 from '../images/background5.png';
 import background6 from '../images/background6.png';
+import background7 from '../images/background7.webp';
+import background8 from '../images/background8.webp';
+import background9 from '../images/background9.webp';
+import background10 from '../images/background10.webp';
+import background11 from '../images/background11.webp';
+import background12 from '../images/background12.webp';
+import background13 from '../images/background13.webp';
+import background14 from '../images/background14.webp';
+import background15 from '../images/background15.webp';
+import background16 from '../images/background16.webp';
 
-const images = [background1, background2, background3, background4, background5, background6];
+const images = [
+  background1,
+  background2,
+  background3,
+  background4,
+  background5,
+  background6,
+  background7,
+  background8,
+  background9,
+  background10,
+  background11,
+  background12,
+  background13,
+  background14,
+  background15,
+  background16,
+];
 
 const StyledBackground = styled.div`
   height: 100vh;
@@ -55,7 +82,7 @@ const BackgroundSlider = () => {
         setCurrentImageIndex(prevIndex => (prevIndex + 1) % images.length);
         setOpacity(1);
       }, 1250); // Transition time for fade effect, matches the jQuery fade duration
-    }, 10000 + 1250); // Total duration includes full visibility plus fade time
+    }, 5000 + 1250); // Total duration includes full visibility plus fade time
 
     return () => clearInterval(interval);
   }, []);
